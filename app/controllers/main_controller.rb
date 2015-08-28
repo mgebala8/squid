@@ -23,9 +23,9 @@ class MainController < ApplicationController
 
   def login
 
-    #if session[:logged] == true
-    #    redirect_to action: 'index'
-    #end
+    if session[:logged] == true
+        redirect_to action: 'index'
+    end
 
     unless params[:password].nil?
       if  params[:password] == 'WyborczaTIP'
