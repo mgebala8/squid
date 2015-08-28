@@ -1,0 +1,45 @@
+// Place all the styles related to the main controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body,html{
+  margin:0px;
+  padding:0px;
+}
+
+body{
+ background-image: url(<%= asset_path 'background.jpg' %>);
+
+ form{
+   height: 100px;
+   width: 300px;
+   background-color: rgba(0,0,0,0.5);
+   position: absolute;
+   top: 10%;
+   border-top-radius: 10px;
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   line-height: 100px;
+
+   input{
+     height:30px;
+     line-height: 30px;
+     margin-left:30px;
+
+   }
+
+   input[type=submit]{
+     height: 100px;
+     width: 80px;
+     line-height: 100px;
+     background-color: #000;
+     border: 0px;
+     outline: 0px;
+     cursor: pointer;
+     font-weight: bold;
+     color: #fff;
+   }
+
+ }
+
+}
