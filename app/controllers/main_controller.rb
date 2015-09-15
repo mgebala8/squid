@@ -16,8 +16,14 @@ class MainController < ApplicationController
     @data = nil;
     require 'uri'
 
-    @body = http.body_str.force_encoding("ISO-8859-2").encode!("UTF-8")
-    render html: @body.gsub!(/https?:\/\/[\S]+.html/, request.base_url+'?www=\&').gsub!(/https?:\/\/[\S]+\.pl\/"/, request.base_url+'?www=\&').html_safe
+    body = http.body_str.force_encoding("ISO-8859-2").encode!("UTF-8")
+    response = body.gsub!(/https?:\/\/[\S]+.html/, request.base_url+'?www=\&').gsub!(/https?:\/\/[\S]+\.pl\/"/, request.base_url+'?www=\&')
+    if response.nil?
+      redirect_to action: 'index'
+    else
+      render html: response.html_safe
+    end
+
 
   end
 
